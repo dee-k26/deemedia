@@ -1,3 +1,4 @@
+/* General Styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -20,21 +21,90 @@ body {
   color: #61dafb;
 }
 
+/* Hero Section */
 #hero {
   text-align: center;
-  padding: 2rem;
+  padding: 3rem 1rem;
   background: #f4f4f4;
 }
 
+.hero-buttons {
+  margin-top: 1rem;
+}
+
+.btn {
+  padding: 10px 20px;
+  margin: 10px;
+  text-decoration: none;
+  background: #282c34;
+  color: white;
+  border-radius: 5px;
+}
+
+.btn.secondary {
+  background: #61dafb;
+  color: #282c34;
+}
+
+/* Sections */
 section {
   padding: 2rem;
   max-width: 800px;
   margin: auto;
 }
 
+/* Shows & Services */
+.show-list, .service-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.show, .service {
+  flex: 1;
+  background: #f9f9f9;
+  margin: 10px;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 8px;
+  min-width: 250px;
+}
+
+.show a {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #282c34;
+  font-weight: bold;
+}
+
+/* Footer */
 footer {
   text-align: center;
   padding: 1rem;
   background: #282c34;
   color: white;
+}
+
+.social-icons a {
+  color: #61dafb;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .App-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .show-list, .service-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .show, .service {
+    width: 90%;
+  }
 }
