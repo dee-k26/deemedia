@@ -15,9 +15,9 @@ const Header = () => {
       <h1>DeeMedia</h1>
 
       {/* Menu Button for Mobile */}
-      {/* <button className="menu-button" onClick={toggleMenu}>
+      <button className="menu-button" onClick={toggleMenu}>
         {menuOpen ? "Close" : "Menu"}
-      </button> */}
+      </button>
 
       {/* Navigation Links (Visible on Desktop, Hidden on Mobile) */}
       <nav className={`nav-links ${menuOpen ? "show" : ""}`}>
