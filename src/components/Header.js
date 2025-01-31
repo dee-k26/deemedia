@@ -25,7 +25,7 @@ const Header = () => {
 
         {/* Shows Dropdown (Appears on Hover for Desktop) */}
         <div className="dropdown">
-          <span className="dropdown-toggle">Shows ▼</span>
+          <span className="dropdown-toggle">Shows</span>
           <div className="dropdown-menu">
             <Link to="/shows/the-fix" onClick={closeMenu}>The Fix</Link>
             <Link to="/shows/the-bookkeeper" onClick={closeMenu}>The Bookkeeper</Link>
