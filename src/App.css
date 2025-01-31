@@ -15,25 +15,145 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
+  position: relative;
 }
 
-.App-header nav {
+/* ✅ Fix Desktop Navigation */
+.nav-links {
   display: flex;
   gap: 1rem;
 }
 
-.App-header nav a {
+.nav-links a {
   text-decoration: none;
   color: #61dafb;
   padding: 8px 12px;
   transition: 0.3s;
 }
 
-.App-header nav a:hover {
+.nav-links a:hover {
   background: #61dafb;
   color: #282c34;
   border-radius: 4px;
+}
+
+/* Menu Button (Hidden on Desktop) */
+.menu-button {
+  display: none;
+  background: #61dafb;
+  border: none;
+  padding: 10px 15px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.menu-button:hover {
+  background: #282c34;
+  color: white;
+}
+
+/* 📌 Mobile Styles */
+@media (max-width: 768px) {
+  .menu-button {
+    display: block;
+  }
+
+  /* Hide navigation by default on mobile */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #282c34;
+    padding: 1rem;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Show navigation when menu is open */
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 10px;
+    text-align: center;
+    display: block;
+    color: #61dafb;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+
+  .nav-links a:hover {
+    background: #61dafb;
+    color: #282c34;
+  }
+}
+
+/* Dropdown Menu */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Hide dropdown menu by default */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background: white;
+  color: black;
+  top: 100%;
+  left: 0;
+  min-width: 150px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  flex-direction: column;
+  z-index: 100;
+}
+
+/* 📌 Show dropdown only when hovered (desktop) */
+.dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+/* Dropdown Links */
+.dropdown-menu a {
+  padding: 10px;
+  text-decoration: none;
+  color: #282c34;
+  display: block;
+  transition: 0.3s;
+}
+
+.dropdown-menu a:hover {
+  background: #61dafb;
+  color: white;
+}
+
+/* 📌 Responsive Dropdown on Mobile */
+@media (max-width: 768px) {
+  /* Allow dropdown to be visible inside mobile menu */
+  .dropdown-menu {
+    position: relative;
+    width: 100%;
+    text-align: center;
+  }
+
+  .dropdown-toggle {
+    display: block;
+    padding: 10px;
+    cursor: pointer;
+    color: #61dafb;
+  }
+
+  /* Show dropdown when menu is open */
+  .nav-links.show .dropdown-menu {
+    display: flex;
+  }
 }
 
 /* Hero Section */
@@ -61,39 +181,6 @@ body {
   color: #282c34;
 }
 
-/* Dropdown Menu */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-menu {
-  position: absolute;
-  background: white;
-  color: black;
-  top: 100%;
-  left: 0;
-  min-width: 150px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-  display: flex;
-  flex-direction: column;
-  z-index: 100;
-}
-
-.dropdown-menu a {
-  padding: 10px;
-  text-decoration: none;
-  color: #282c34;
-  display: block;
-  transition: 0.3s;
-}
-
-.dropdown-menu a:hover {
-  background: #61dafb;
-  color: white;
-}
-
 /* Shows Page */
 #shows {
   text-align: center;
@@ -118,118 +205,6 @@ body {
 
 .show-list a:hover {
   text-decoration: underline;
-}
-
-/* Podcast Page Styles */
-.show {
-  background: #fff;
-  margin: 15px auto;
-  padding: 1rem;
-  text-align: center;
-  border-radius: 8px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  width: 90%;
-  max-width: 600px;
-}
-
-.show iframe {
-  margin-top: 10px;
-}
-
-/* Services Section */
-#services {
-  text-align: center;
-  padding: 2rem;
-}
-
-.service-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-.service {
-  background: white;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  width: 250px;
-  text-align: center;
-}
-
-/* Contact Section */
-#contact {
-  text-align: center;
-  padding: 2rem;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 1rem;
-  background: #282c34;
-  color: white;
-}
-
-/* Social Icons */
-.social-icons a {
-  color: #61dafb;
-  margin: 0 10px;
-  text-decoration: none;
-}
-
-/* 📌 Mobile Responsive Styles */
-@media (max-width: 768px) {
-  .App-header {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .App-header nav {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  /* 📌 Responsive Dropdown */
-  .dropdown {
-    width: 100%;
-    text-align: center;
-  }
-
-  .dropdown-menu {
-    position: relative;
-    width: 100%;
-    text-align: center;
-  }
-
-  .dropdown-menu a {
-    display: block;
-    padding: 12px;
-  }
-
-  /* 📌 Shows List on Mobile */
-  .show-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .show-list li {
-    width: 90%;
-    text-align: center;
-    font-size: 16px;
-  }
-
-  /* 📌 Services on Mobile */
-  .service-list {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .service {
-    width: 90%;
-  }
 }
 
 /* Individual Show Pages */
@@ -277,56 +252,6 @@ footer {
   color: white;
 }
 
-/* Legal Pages */
-.policy-container {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.policy-container h2 {
-  font-size: 28px;
-  color: #282c34;
-}
-
-.policy-container h3 {
-  font-size: 22px;
-  margin-top: 15px;
-}
-
-.policy-container p {
-  font-size: 16px;
-  color: #555;
-  line-height: 1.6;
-}
-
-/* Footer */
-footer {
-  text-align: center;
-  padding: 1rem;
-  background: #282c34;
-  color: white;
-}
-
-.footer-links {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 10px;
-}
-
-.footer-links a {
-  color: #61dafb;
-  text-decoration: none;
-}
-
-.footer-links a:hover {
-  text-decoration: underline;
-}
-
 /* About Page */
 #about {
   display: flex;
@@ -358,197 +283,52 @@ footer {
   line-height: 1.6;
 }
 
-/* Navigation Bar */
-.App-header {
-  background-color: #282c34;
+/* Footer */
+footer {
+  text-align: center;
   padding: 1rem;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-}
-
-/* Hide Navigation Links on Mobile */
-.nav-links {
-  display: flex;
-  gap: 1rem;
-}
-
-/* Menu Button for Mobile */
-.menu-button {
-  display: none;
-  background: #61dafb;
-  border: none;
-  padding: 10px 15px;
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: 0.3s;
-}
-
-.menu-button:hover {
   background: #282c34;
   color: white;
 }
 
-/* Mobile Styles */
-@media (max-width: 768px) {
-  .menu-button {
-    display: block;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: #282c34;
-    padding: 1rem;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  }
-
-  .nav-links.show {
-    display: flex;
-  }
-
-  .nav-links a {
-    padding: 10px;
-    text-align: center;
-    display: block;
-    color: #61dafb;
-    text-decoration: none;
-    transition: 0.3s;
-  }
-
-  .nav-links a:hover {
-    background: #61dafb;
-    color: #282c34;
-  }
-}
-
-/* Navigation Bar */
-.App-header {
-  background-color: #282c34;
-  padding: 1rem;
-  color: white;
+.footer-links {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
 }
 
-/* Hide Navigation Links on Mobile */
-.nav-links {
-  display: flex;
-  gap: 1rem;
-}
-
-/* Menu Button for Mobile */
-.menu-button {
-  display: none;
-  background: #61dafb;
-  border: none;
-  padding: 10px 15px;
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: 0.3s;
-}
-
-.menu-button:hover {
-  background: #282c34;
-  color: white;
-}
-
-/* Dropdown Menu */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-toggle {
-  cursor: pointer;
-  padding: 8px 12px;
-  transition: 0.3s;
-}
-
-.dropdown-menu {
-  position: absolute;
-  background: white;
-  color: black;
-  top: 100%;
-  left: 0;
-  min-width: 150px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-  display: flex;
-  flex-direction: column;
-  z-index: 100;
-}
-
-.dropdown-menu a {
-  padding: 10px;
+.footer-links a {
+  color: #61dafb;
   text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Legal Pages */
+.policy-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.policy-container h2 {
+  font-size: 28px;
   color: #282c34;
-  display: block;
-  transition: 0.3s;
 }
 
-.dropdown-menu a:hover {
-  background: #61dafb;
-  color: white;
+.policy-container h3 {
+  font-size: 22px;
+  margin-top: 15px;
 }
 
-/* Mobile Styles */
-@media (max-width: 768px) {
-  .menu-button {
-    display: block;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: #282c34;
-    padding: 1rem;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  }
-
-  .nav-links.show {
-    display: flex;
-  }
-
-  .nav-links a {
-    padding: 10px;
-    text-align: center;
-    display: block;
-    color: #61dafb;
-    text-decoration: none;
-    transition: 0.3s;
-  }
-
-  .nav-links a:hover {
-    background: #61dafb;
-    color: #282c34;
-  }
-
-  /* Responsive Dropdown */
-  .dropdown-menu {
-    position: relative;
-    width: 100%;
-    text-align: center;
-  }
-
-  .dropdown-menu a {
-    display: block;
-    padding: 12px;
-  }
+.policy-container p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
 }

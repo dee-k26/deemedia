@@ -3,16 +3,12 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  // Function to toggle the menu
+  // Toggle full mobile menu
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
-  // Function to close the menu when a link is clicked
-  const closeMenu = () => {
-    setMenuOpen(false);
-    setDropdownOpen(false);
-  };
+  // Close menu when a link is clicked
+  const closeMenu = () => setMenuOpen(false);
 
   return (
     <header className="App-header">
@@ -23,25 +19,19 @@ const Header = () => {
         {menuOpen ? "Close" : "Menu"}
       </button>
 
-      {/* Navigation Links */}
+      {/* Navigation Links (Visible on Desktop, Hidden on Mobile) */}
       <nav className={`nav-links ${menuOpen ? "show" : ""}`}>
         <Link to="/" onClick={closeMenu}>Home</Link>
 
-        {/* Shows Dropdown */}
-        <div 
-          className="dropdown"
-          onMouseEnter={() => setDropdownOpen(true)}
-          onMouseLeave={() => setDropdownOpen(false)}
-        >
+        {/* Shows Dropdown (Appears on Hover for Desktop) */}
+        <div className="dropdown">
           <span className="dropdown-toggle">Shows ▼</span>
-          {dropdownOpen && (
-            <div className="dropdown-menu">
-              <Link to="/shows/the-fix" onClick={closeMenu}>The Fix</Link>
-              <Link to="/shows/the-bookkeeper" onClick={closeMenu}>The Bookkeeper</Link>
-              <Link to="/shows/tide" onClick={closeMenu}>Tide</Link>
-              <Link to="/shows/tidy" onClick={closeMenu}>Tidy</Link>
-            </div>
-          )}
+          <div className="dropdown-menu">
+            <Link to="/shows/the-fix" onClick={closeMenu}>The Fix</Link>
+            <Link to="/shows/the-bookkeeper" onClick={closeMenu}>The Bookkeeper</Link>
+            <Link to="/shows/tide" onClick={closeMenu}>Tide</Link>
+            <Link to="/shows/tidy" onClick={closeMenu}>Tidy</Link>
+          </div>
         </div>
 
         <Link to="/services" onClick={closeMenu}>Services</Link>
