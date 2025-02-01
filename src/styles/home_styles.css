@@ -1,16 +1,22 @@
 /* Home Page Styles */
 .home-container {
     text-align: center;
-    padding: 2rem;
+    /* padding: 2rem; */
   }
   
   /* Hero Section */
   #hero {
-    /* background: url('/hero-image.jpg') center/cover no-repeat; */
-    color: rgb(1, 0, 0);
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url('../assetts/soundwave.jpg') center/cover no-repeat;
+    color: white;
     padding: 5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
-  
+
   #hero h1 {
     font-size: 2.5rem;
     font-weight: bold;
