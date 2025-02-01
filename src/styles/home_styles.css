@@ -154,7 +154,9 @@
       justify-content: center;
     }
     #services-home {
+        text-align: center;
         align-items: center;
+        width: 100%;
       }
     
     .service-grid {
