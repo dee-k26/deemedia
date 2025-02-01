@@ -1,0 +1,144 @@
+/* Home Page Styles */
+.home-container {
+    text-align: center;
+    padding: 2rem;
+  }
+  
+  /* Hero Section */
+  #hero {
+    /* background: url('/hero-image.jpg') center/cover no-repeat; */
+    color: rgb(1, 0, 0);
+    padding: 5rem 1rem;
+  }
+  
+  #hero h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  
+  .hero-buttons {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  /* Buttons */
+  .btn {
+    padding: 12px 20px;
+    margin: 10px;
+    text-decoration: none;
+    background: #282c34;
+    color: white;
+    border-radius: 5px;
+    display: inline-block;
+  }
+  
+  .btn.secondary {
+    background: #61dafb;
+    color: #282c34;
+  }
+  
+  /* About Section */
+  #about-home {
+    padding: 2rem;
+    background: #f4f4f4;
+  }
+  
+  /* Shows Section */
+  #shows-home {
+    padding: 2rem;
+  }
+  
+  .show-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  .show-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .show-card h3 {
+    font-size: 1.5rem;
+    color: #282c34;
+  }
+  
+  .show-card a {
+    color: #61dafb;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  /* Services Section */
+  #services-home {
+    padding: 2rem;
+    background: #f4f4f4;
+  }
+  
+  .service-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .service-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+  }
+  
+  /* Testimonials Section */
+  #testimonials {
+    padding: 2rem;
+  }
+  
+  .testimonial {
+    background: white;
+    padding: 1.5rem;
+    margin: 1rem auto;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* Contact Section */
+  #contact-home {
+    padding: 2rem;
+    background: #282c34;
+    color: white;
+  }
+  
+  #contact-home .btn {
+    background: white;
+    color: #282c34;
+  }
+  
+  /* Mobile Adjustments */
+  @media (max-width: 768px) {
+    .show-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .service-grid {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .hero-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
