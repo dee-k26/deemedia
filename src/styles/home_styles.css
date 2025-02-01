@@ -148,7 +148,7 @@
       justify-content: center;
     }
     #services-home {
-        align: center;
+        align-items: center;
       }
     
     .service-grid {
