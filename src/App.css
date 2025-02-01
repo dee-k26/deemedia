@@ -21,6 +21,7 @@ body {
 /* ✅ Fix Desktop Navigation */
 .nav-links {
   display: flex;
+  align-items: center; /*ensures vertical alignment*/
   gap: 1rem;
 }
 
@@ -97,7 +98,22 @@ body {
 /* Dropdown Menu */
 .dropdown {
   position: relative;
-  display: inline-block;
+  display: flex;
+  align-items: center; /* Aligns with other links */
+}
+
+/* Shows tab is now a normal clickable link */
+.dropdown-toggle {
+  padding: 8px 12px;
+  text-decoration: none;
+  color: #61dafb;
+  transition: 0.3s;
+}
+
+.dropdown-toggle:hover {
+  background: #61dafb;
+  color: #282c34;
+  border-radius: 4px;
 }
 
 /* Hide dropdown menu by default */
@@ -136,7 +152,6 @@ body {
 
 /* 📌 Responsive Dropdown on Mobile */
 @media (max-width: 768px) {
-  /* Allow dropdown to be visible inside mobile menu */
   .dropdown-menu {
     position: relative;
     width: 100%;
@@ -155,6 +170,7 @@ body {
     display: flex;
   }
 }
+
 
 /* Hero Section */
 #hero {
