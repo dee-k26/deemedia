@@ -10,7 +10,7 @@ body {
 /* Header Navigation */
 .App-header {
   background-color: #282c34;
-  padding: 1rem;
+  padding: 20px 20px 0px 20px;
   color: white;
   display: flex;
   justify-content: space-between;
@@ -23,7 +23,7 @@ body {
   display: flex;
   align-items: bottom;
   gap: 20px;
-  padding: 20px 50px; /* Added padding around the container */
+  padding: 0px 50px; /* Added padding around the container */
 }
 
 /* Logo Image */
@@ -80,7 +80,7 @@ body {
     width: 100%;
     overflow-x: hidden;
   }
-  
+
   .App-header {
     flex-direction: column;
     align-items: center;

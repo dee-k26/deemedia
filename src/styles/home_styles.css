@@ -83,17 +83,30 @@
   }
   
   /* Services Section */
-  #services-home {
-    padding: 2rem;
-    background: #f4f4f4;
+  /* Ensure Services section is centered */
+#services-home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px; /* Restrict max width */
+    margin: 0 auto; /* Ensure full centering */
+    text-align: center;
   }
   
+  /* Center service cards properly */
   .service-grid {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px; /* Ensure grid stays within a balanced width */
     gap: 20px;
+    text-align: center;
   }
+  
   
   .service-card {
     background: white;
