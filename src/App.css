@@ -18,6 +18,21 @@ body {
   position: relative;
 }
 
+/* Logo and Title */
+.logo-container {
+  display: flex;
+  align-items: bottom;
+  gap: 20px;
+  padding: 20px 50px; /* Added padding around the container */
+}
+
+/* Logo Image */
+.logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+}
+
 /* ✅ Fix Desktop Navigation */
 .nav-links {
   display: flex;
@@ -60,6 +75,18 @@ body {
 @media (max-width: 768px) {
   .menu-button {
     display: block;
+  }
+
+  /* Center logo above the name */
+  .logo-container {
+    flex-direction: column;
+    gap: 0px;
+  }
+
+  /* Adjust logo size for mobile */
+  .logo {
+    width: 60px;
+    height: 60px;
   }
 
   /* Hide navigation by default on mobile */

@@ -9,8 +9,8 @@ const Home = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1 }}
     >
-      <h2>Creative Stories & Meaningful Conversations</h2>
-      <p>Your hub for podcasts, coaching, and media production.</p>
+      <h2>Raw, Uncut and Unedited Media</h2>
+      <p>Your hub for podcasts, coaching and media production.</p>
       <div className="hero-buttons">
         <motion.a href="/shows" className="btn"
           whileHover={{ scale: 1.1 }}

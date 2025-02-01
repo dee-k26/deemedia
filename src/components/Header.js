@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+// import logo from "../assets/logo192.png"; // Import logo
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -12,7 +13,10 @@ const Header = () => {
 
   return (
     <header className="App-header">
-      <h1>DeeMedia</h1>
+      <div className="logo-container">
+      <img src="/logo192.png" alt="DeeMedia Logo" className="logo" />
+        <h1>DeeMedia</h1>
+      </div>
 
       {/* Menu Button for Mobile */}
       <button className="menu-button" onClick={toggleMenu}>
@@ -23,16 +27,7 @@ const Header = () => {
       <nav className={`nav-links ${menuOpen ? "show" : ""}`}>
         <Link to="/" onClick={closeMenu}>Home</Link>
 
-        {/* Shows Dropdown (Appears on Hover for Desktop) */}
-        {/* <div className="dropdown">
-          <span className="dropdown-toggle">Shows</span>
-          <div className="dropdown-menu">
-            <Link to="/shows/the-fix" onClick={closeMenu}>The Fix</Link>
-            <Link to="/shows/the-bookkeeper" onClick={closeMenu}>The Bookkeeper</Link>
-            <Link to="/shows/tide" onClick={closeMenu}>Tide</Link>
-            <Link to="/shows/tidy" onClick={closeMenu}>Tidy</Link>
-          </div>
-        </div> */}
+      
          <div className="dropdown">
           <Link to="/shows" className="dropdown-toggle" onClick={closeMenu}>
             Shows
