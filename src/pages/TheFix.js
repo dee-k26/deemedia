@@ -21,7 +21,7 @@ const TheFix = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const response = await fetch("https://deemedia-backend.onrender.com/send", {
+    const response = await fetch("https://deemedia-backend.onrender.com/send-anecdote", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
