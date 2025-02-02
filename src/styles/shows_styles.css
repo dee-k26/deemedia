@@ -24,7 +24,7 @@
   /* Shows Grid Layout */
   .shows-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 20px;
     padding: 1rem;
   }
@@ -40,7 +40,8 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 400px; /* Fixed height for uniform size */
+    height: auto; /* Allow height to adjust dynamically */
+    min-height: 400px;
   }
   
   .show-card:hover {
@@ -94,6 +95,12 @@
   
     .shows-grid {
       grid-template-columns: 1fr;
+      gap: 15px;
+    }
+  
+    .show-card {
+      min-height: auto;
+      padding: 1rem;
     }
   }
   
