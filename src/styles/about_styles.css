@@ -94,6 +94,10 @@
   
   /* Responsive Design */
   @media (max-width: 768px) {
+    #about-dan {
+        padding: 20px 10px;
+    }
+
     .about-content {
       flex-direction: column;
       text-align: center;
