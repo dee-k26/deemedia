@@ -1,0 +1,124 @@
+/* The Fix Page Styles */
+.show-container {
+    text-align: center;
+    padding: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .show-container h2 {
+    font-size: 2rem;
+    color: #282c34;
+    margin-bottom: 1rem;
+  }
+  
+  .show-container p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  
+  .show-container iframe {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  /* Anecdote Form */
+  #anecdote-form {
+    background: #f4f4f4;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+  }
+  
+  #anecdote-form h2 {
+    font-size: 1.8rem;
+    color: #282c34;
+    margin-bottom: 1rem;
+  }
+  
+  #anecdote-form p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  label {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    vertical-align: middle;
+  }
+  
+  .checkbox-group input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    vertical-align: middle;
+  }
+  
+  button {
+    padding: 12px;
+    font-size: 1.2rem;
+    background: #61dafb;
+    color: #282c34;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background: #282c34;
+    color: white;
+  }
+  
+  .back-link {
+    display: block;
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #61dafb;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .back-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .show-container {
+      padding: 20px 10px;
+    }
+  
+    #anecdote-form {
+      padding: 20px 10px;
+    }
+
+    .checkbox-group {
+        justify-content: center;
+      }
+  }
+  
