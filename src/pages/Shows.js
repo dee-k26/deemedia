@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import "../styles/shows_styles.css";
+import "../styles/shows_styles.css";
 
 const shows = [
   {
