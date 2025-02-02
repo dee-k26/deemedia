@@ -45,6 +45,11 @@ const About = () => {
               one of resilience, creativity, and continuous learning. He brings this same passion 
               to DeeMedia, helping others find their own voice and creative spark.
             </p>
+            <p>
+              Through it all, **his wife Shannon has been his rock**. Dan loves Shannon deeply and appreciates 
+              her unwavering support, patience, and love. She has stood by his side through the highs and lows, 
+              and he wouldn’t be the man he is today without her. 
+            </p>
           </div>
         </div>
       </section>
